@@ -1,0 +1,42 @@
+div{
+    margin: 10px;
+
+}
+
+div div {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+}
+
+div div div {
+    width: 30%;
+    height: auto;
+    display: flex;
+    min-width: 100px;
+    gap: 1vw;
+}
+div div div input,select{
+    width: 100%;
+}
+
+#typing_zone {
+    justify-self: center;
+    width: 90vw;
+    min-height: 50vw;
+    font-size: 20pt;
+    text-align: left;
+    vertical-align: top;
+}
+
+div {justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;}
+
+
+a{
+    font-size: 15pt;
+    justify-self: center;
+    align-self: center;
+}
