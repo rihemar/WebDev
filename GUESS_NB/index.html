@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>JEU CHIFFRE CACHE</title>
+</head>
+<body>
+    <div class="gamebox">
+        <ul>
+            <li id="level">
+                <b>Level :</b> 
+                <div id="easy">Easy</div>
+                <div id='medium'>Medium</div>
+                <div id="hard">Hard</div>
+            </li>
+            <li id="msg"></li>
+        </ul>
+    </div>
+    <script>
+        let level="";
+        let m=0;
+        let n=0;
+        let tr=0;
+        
+        const easy = document.querySelector("#easy");
+        const medium = document.querySelector("#medium");
+        const hard = document.querySelector("#hard");
+        const msg = document.querySelector("#msg");
+        
+        easy.addEventListener("click",()=>{level="easy";reload();});
+        medium.addEventListener("click",()=>{level="medium";reload();});
+        hard.addEventListener("click",()=>{level="hard";reload();});
+        
+        function reload(){
+            if (level=="hard"){
+                m=200;
+                tr=1;
+                msg.innerHTML="you have one try to guess number between zero and 200";
+           }else if (level=="medium"){
+                m=50;
+                tr=3;
+                msg.innerHTML="you have 3 tries to guess number between zero and 50";
+           }else{
+                m=10;
+                tr=6;
+                msg.innerHTML="you have 6 tries to guess number between zero and 10";
+           }
+            
+           //GENERATE RANDOM NUMBER TO BE GUESSED BASED ON LEVEL
+            randomNumber = Math.floor(Math.random()*(m-n+1))+n;
+        
+           setTimeout(() => {
+            do {
+                let text = prompt("Enter a number here");
+        
+                if (text == randomNumber) {
+                    msg.innerHTML="well donneeee!!!";
+                    break;}
+        
+                else if (text == null) {
+                    break;}
+                 
+                else {
+                    tr--;
+                    if(tr==0){msg.innerHTML="womp womp womp"}
+                    else{alert("Number of attempts left: " + tr);}}
+                
+            } while (tr != 0);
+        }, 100);
+        
+        }</script>
+</body>
+</html>

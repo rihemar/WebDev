@@ -1,0 +1,48 @@
+*{
+    font-style: oblique;
+    margin-top: 25px;
+    font-size: large;
+}
+
+li{
+    list-style: none;
+    text-align: center;
+}
+
+#level{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#level div{
+    display: inline-block;
+    background-color: #fe46c7;  /* Green background */
+    color: white;  /* White text */
+    padding: 10px 20px;  /* Padding for size */
+    font-size: 16px;  /* Font size */
+    border: none;  /* No border */
+    border-radius: 5px;  /* Rounded corners */
+    text-align: center;  /* Center text */
+    cursor: pointer;  /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; 
+}
+
+#level div:hover {
+    background-color: #ac107d;
+}
+
+#level div:active{
+    background-color: black;
+}
+
+ul{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    align-items: center;
+    gap: 20px;
+}
